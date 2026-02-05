@@ -50,18 +50,7 @@ To prepare the data for the Diffusion stage:
 
 * **Dynamic Thresholding** : During sampling, it is critical to predict **x**0 at each step and  **clamp it to **[**−**1**,**+**1**]**** . This prevents "mean drift" and ensures the latent distribution remains stable throughout the 1000-step reverse process.
 * **Variance Handling** : In early experiments, a "Variance Collapse" was observed where the generated latents had a lower standard deviation (**∼**0.58) than the training data (**∼**0.99), leading to low-contrast results.
-* **Sampling Grain** : For Cosine schedules, residual noise can sometimes appear in the final steps. Implementing a "clean finish"—reducing or removing noise injection in the final 5–10 steps—can result in smoother final images.
-
----
-
-## 📊 Results
-
-| Schedule         | Sample Output                           |
-| ---------------- | --------------------------------------- |
-| **Cosine** | `results/celeb_ldm2_10x10_cosine.png` |
-| **Linear** | `results/celeb_ldm2_10x10_linear.png` |
-
-Export to Sheets
+* **Sampling Grain** : For Cosine schedules, residual noise can sometimes appear in the final steps. Implementing a "clean finish"—reducing or removing noise injection in the final 5–10 steps—can result in smoother final images
 
 ---
 
